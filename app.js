@@ -1,17 +1,57 @@
+// Late Bloomer Recordings – Internal Catalog System
+
+const catalog = [
+  {
+    title: "Dope House",
+    artist: "LB the Late Bloomer",
+
+    writers: [
+      {
+        name: "LB the Late Bloomer",
+        pro: "BMI",
+        share: 100
+      }
+    ],
+
+    publisher: {
+      name: "Late Bloomer Recordings",
+      pro: "BMI",
+      share: 100
+    },
+
+    isrc: "",
+    iswc: "",
+
+    distributor: "DistroKid",
+
+    copyrightFiled: false,
+    proRegistered: false,
+    mlcRegistered: false,
+    hfaRegistered: false
+  }
+];
+
+// Display catalog JSON
+document.getElementById("output").textContent =
+  JSON.stringify(catalog, null, 2);
+
+// Export CSV
 function exportCSV() {
-  let csv = "Title,Artist,Writer,Writer PRO,Writer %,Publisher,Publisher PRO,ISRC,ISWC,Distributor\n";
+  let csv =
+    "Title,Artist,Writer,Writer PRO,Writer %,Publisher,Publisher PRO,ISRC,ISWC,Distributor\n";
 
   catalog.forEach(song => {
     const writer = song.writers[0];
-    csv += `"${song.title}","${song.artist}","${writer.name}","${writer.pro}","${writer.share}","${song.publisher.name}","${song.publisher.pro}","${song.isrc}","${song.iswc}","${song.distributor}"\n`;
+    csv +=
+      `"${song.title}","${song.artist}","${writer.name}","${writer.pro}","${writer.share}","${song.publisher.name}","${song.publisher.pro}","${song.isrc}","${song.iswc}","${song.distributor}"\n`;
   });
 
-  // Show CSV on screen (fallback)
+  // Show CSV preview
   document.getElementById("csvPreview").textContent = csv;
   document.getElementById("status").textContent =
-    "CSV generated. Download should start automatically. If not, copy from below.";
+    "CSV generated. Download should begin automatically.";
 
-  // Attempt download
+  // Trigger download
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);
 
