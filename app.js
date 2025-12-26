@@ -62,3 +62,10 @@ function exportCSV() {
   a.click();
   document.body.removeChild(a);
 }
+function getStatus(song) {
+  if (!song.copyrightFiled) return "🔴 Copyright Not Filed";
+  if (!song.proRegistered) return "🟡 PRO Registration Pending";
+  if (!song.mlcRegistered) return "🟡 MLC Registration Pending";
+  if (!song.hfaRegistered) return "🟡 HFA Registration Pending";
+  return "🟢 Fully Registered";
+}
