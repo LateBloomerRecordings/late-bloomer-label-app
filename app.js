@@ -1,37 +1,25 @@
-const catalog = [
-  {
-    title: "Dope House",
-    artist: "LB the Late Bloomer",
+function exportCSV() {
+  let csv = "Title,Artist,Writer,Writer PRO,Writer %,Publisher,Publisher PRO,ISRC,ISWC,Distributor\n";
 
-    writers: [
-      {
-        name: "LB the Late Bloomer",
-        pro: "BMI",
-        ipi: "",
-        share: 100
-      }
-    ],
+  catalog.forEach(song => {
+    const writer = song.writers[0];
+    csv += `"${song.title}","${song.artist}","${writer.name}","${writer.pro}","${writer.share}","${song.publisher.name}","${song.publisher.pro}","${song.isrc}","${song.iswc}","${song.distributor}"\n`;
+  });
 
-    publisher: {
-      name: "Late Bloomer Recordings",
-      pro: "BMI",
-      ipi: "",
-      share: 100
-    },
+  // Show CSV on screen (fallback)
+  document.getElementById("csvPreview").textContent = csv;
+  document.getElementById("status").textContent =
+    "CSV generated. Download should start automatically. If not, copy from below.";
 
-    isrc: "",
-    iswc: "",
+  // Attempt download
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
 
-    copyrightFiled: false,
-    proRegistered: false,
-    mlcRegistered: false,
-    hfaRegistered: false,
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "late-bloomer-catalog.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
-    distributor: "DistroKid",
-    contentId: false,
-    syncReady: false
-  }
-];
-
-document.getElementById("output").textContent =
-  JSON.stringify(catalog, null, 2);
