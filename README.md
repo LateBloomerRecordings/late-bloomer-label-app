@@ -1,13 +1,12 @@
-# late-bloomer-label-app
-Late Bloomer Recordings – private label admin app
-# Late Bloomer Recordings – Catalog System
+# Late Bloomer Recordings – Internal Label Catalog
 
-Internal label system for:
-- Song ownership tracking
-- PRO registration (BMI primary)
-- HFA / MLC compatibility
-- Distributor metadata
-- Export / Import protection
+This is a private internal catalog system for managing music releases,
+ownership, and registrations at a professional indie-label level.
 
 Artist: LB the Late Bloomer  
-Publisher: Late Bloomer Recordings
+Publisher: Late Bloomer Recordings  
+
+Purpose:
+- Track song metadata
+- Prepare exports for BMI, HFA/MLC, and distributors
+- Maintain a single source of truth for the catalog
