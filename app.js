@@ -34,6 +34,7 @@ const catalog = [
 // Display catalog JSON
 document.getElementById("output").textContent =
   JSON.stringify(catalog, null, 2);
+
 document.getElementById("statusDisplay").textContent =
   getStatus(catalog[0]);
 
