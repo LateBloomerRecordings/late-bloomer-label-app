@@ -1,0 +1,9 @@
+{
+  "name": "late-bloomer-records",
+  "version": "1.0.0",
+  "description": "Internal label catalog system",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}
