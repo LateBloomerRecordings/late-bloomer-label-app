@@ -1,9 +1,8 @@
 {
-  "name": "late-bloomer-records",
+  "name": "late-bloomer-recordings",
   "version": "1.0.0",
-  "description": "Internal label catalog system",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  }
+  "description": "Internal catalog system for Late Bloomer Recordings",
+  "author": "LB the Late Bloomer",
+  "license": "MIT"
 }
+
