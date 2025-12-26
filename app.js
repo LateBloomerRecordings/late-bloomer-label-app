@@ -22,4 +22,3 @@ function exportCSV() {
   a.click();
   document.body.removeChild(a);
 }
-Improve CSV export visibility and reliability
